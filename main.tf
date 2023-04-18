@@ -1,4 +1,5 @@
 provider "google" {
+  credentials = file("<PATH_TO_YOUR_KEY_FILE>")
   project = "<PROJECT_ID>"
   region  = "<REGION>"
 }
