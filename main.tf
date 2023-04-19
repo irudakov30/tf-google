@@ -1,7 +1,7 @@
 provider "google" {
-  credentials = file("<PATH_TO_YOUR_KEY_FILE>")
-  project = "<PROJECT_ID>"
-  region  = "<REGION>"
+  access_token = var.token
+  project = "carbide-ether-375021"
+  region  = "europe-west3"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -11,8 +11,8 @@ resource "google_compute_network" "vpc_network" {
 
 resource "google_compute_instance" "vm_instance" {
   name         = "my-vm"
-  machine_type = "e2-medium"
-  zone         = "<ZONE>"
+  machine_type = "e2-small"
+  zone         = "europe-west3"
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-10"
