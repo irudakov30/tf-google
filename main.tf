@@ -1,3 +1,7 @@
+variable "token" {
+  type = string
+}
+
 provider "google" {
   access_token = var.token
   project = "carbide-ether-375021"
