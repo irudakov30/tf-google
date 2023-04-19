@@ -2,10 +2,18 @@ variable "token" {
   type = string
 }
 
+variable "projectId" {
+  type = string
+}
+
+variable "region" {
+  type = string
+}
+
 provider "google" {
   access_token = var.token
-  project = "carbide-ether-375021"
-  region  = "europe-west3"
+  project = var.projectId
+  region  = var.region
 }
 
 resource "google_compute_network" "vpc_network" {
